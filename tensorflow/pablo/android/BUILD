@@ -46,7 +46,7 @@ cc_library(
 )
 
 android_library(
-    name = "lib",
+    name = "censio_crash",
     srcs = glob([
         "src/**/*.java",
     ]),

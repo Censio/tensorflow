@@ -5,5 +5,5 @@ This folder contains the Pablo project for Android: it build and links the TrueM
 To build, run the following command from the root of your TensorFlow / Bazel workspace.
 
 ```
-$ bazel build //tensorflow/pablo/android:lib --crosstool_top=//external:android/crosstool --cpu=armeabi-v7a --host_crosstool_top=@bazel_tools//tools/cpp:toolchain
+$ bazel build //tensorflow/pablo/android:censio_crash --crosstool_top=//external:android/crosstool --cpu=armeabi-v7a --host_crosstool_top=@bazel_tools//tools/cpp:toolchain
 ```
