@@ -19,3 +19,7 @@ node_modules
 *.pyc
 __pycache__
 *.swp
+
+# TrueMotion tweaks
+WORKSPACE
+/tensorflow/examples/android/assets

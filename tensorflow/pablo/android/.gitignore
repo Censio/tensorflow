@@ -1,0 +1,4 @@
+#Java binding are generated
+/src/io/cens/android/onboard/crash
+/jni/generated
+

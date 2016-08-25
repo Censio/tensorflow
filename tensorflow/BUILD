@@ -166,6 +166,7 @@ filegroup(
         "//tensorflow/tools/proto_text:all_files",
         "//tensorflow/tools/test:all_files",
         "//tensorflow/user_ops:all_files",
+        "//tensorflow/pablo/android:all_files",
     ],
     visibility = [":__subpackages__"],
 )
