@@ -1,3 +1,9 @@
 #Java binding are generated
 /src/io/cens/android/onboard/crash
+/jni/*.hpp
+/jni/*.h
+/jni/*.cpp
 /jni/*.cxx
+/jni/*.cc
+/jni/*.c
+
