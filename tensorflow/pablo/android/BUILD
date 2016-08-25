@@ -1,5 +1,5 @@
 # Description:
-#   TensorFlow camera demo app for Android.
+#   Pablo Android port
 
 package(default_visibility = ["//visibility:public"])
 
@@ -10,15 +10,16 @@ load("//tensorflow:tensorflow.bzl", "tf_copts")
 exports_files(["LICENSE"])
 
 cc_binary(
-    name = "libtensorflow_demo.so",
+    name = "libcensio_crash.so",
     srcs = glob([
-        "jni/**/*.cc",
+        "jni/**/*.hpp",
         "jni/**/*.h",
+        "jni/**/*.cxx",
+        "jni/**/*.cpp",
     ]) + [],
     copts = tf_copts(),
     linkopts = [
         "-landroid",
-        "-ljnigraphics",
         "-llog",
         "-lm",
         "-z defs",
@@ -37,24 +38,21 @@ cc_binary(
 
 cc_library(
     name = "tensorflow_native_libs",
-    srcs = [":libtensorflow_demo.so"],
+    srcs = [":libcensio_crash.so"],
     tags = [
         "manual",
         "notap",
     ],
 )
 
-android_binary(
-    name = "tensorflow_demo",
+android_library(
+    name = "lib",
     srcs = glob([
         "src/**/*.java",
     ]),
-    assets = glob(["assets/**"]),
-    assets_dir = "assets",
-    custom_package = "org.tensorflow.demo",
-    inline_constants = 1,
+    custom_package = "io.cens.android.onboard.crash",
     manifest = "AndroidManifest.xml",
-    resource_files = glob(["res/**"]),
+    resource_files = glob(["res/**/*.xml"]),
     tags = [
         "manual",
         "notap",
@@ -86,14 +84,16 @@ filegroup(
 filegroup(
     name = "jni_files",
     srcs = glob([
-        "jni/**/*.cc",
+        "jni/**/*.hpp",
         "jni/**/*.h",
+        "jni/**/*.cxx",
+        "jni/**/*.cpp",
     ]),
 )
 
 filegroup(
     name = "resource_files",
-    srcs = glob(["res/**"]),
+    srcs = glob(["res/**/*.xml"]),
 )
 
 exports_files(["AndroidManifest.xml"])
